@@ -1,48 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Table with database</title>
-<style>
-table {
-border-collapse: collapse;
-width: 100%;
-color: #588c7e;
-font-family: monospace;
-font-size: 25px;
-text-align: left;
-}
-th {
-background-color: #588c7e;
-color: white;
-}
-tr:nth-child(even) {background-color: #f2f2f2}
-</style>
-</head>
+<title>Staging area</title>
 <body>
-<table>
-<tr>
-<th>Id</th>
-<th>Name</th>
-<th>Cost</th>
-</tr>
-<?php
-$conn = mysqli_connect("esm-test.database.windows.net", "azureuser", "LewisB123", "esm-test-database");
-// Check connection
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
-}
-$sql = "SELECT ProductID, Name, Cost FROM dbo.Test.Products";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-// output data of each row
-while($row = $result->fetch_assoc()) {
-echo "<tr><td>" . $row["ProductID"]. "</td><td>" . $row["Name"] . "</td><td>"
-. $row["Cost"]. "</td></tr>";
-}
-echo "</table>";
-} else { echo "0 results"; }
-$conn->close();
-?>
-</table>
+  <img src="https://www.zdnet.com/a/img/resize/adcb2eb2cc3f5562f7e80931308e2a08b01947ce/2019/08/19/4a663776-f4a9-4f89-9bee-2d07ee052f5b/istock-1147195672-11.jpg?auto=webp&fit=crop&height=900&width=1200"/>
 </body>
 </html>
